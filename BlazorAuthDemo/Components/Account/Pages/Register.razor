@@ -76,8 +76,6 @@
     [SupplyParameterFromQuery]
     private string? ReturnUrl { get; set; }
 
-
-
     private string? Message => identityErrors is null ? null : $"Error: {string.Join(", ", identityErrors.Select(error => error.Description))}";
 
     public async Task RegisterUser(EditContext editContext)
@@ -103,8 +101,6 @@
             identityErrors = result.Errors;
             return;
         }
-
-
 
         Logger.LogInformation("User created a new account with password.");
 
@@ -155,7 +151,6 @@
     {
         return await RoleManager.RoleExistsAsync(roleName);
     }
-
 
     private sealed class InputModel
     {
