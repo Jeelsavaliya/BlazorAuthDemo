@@ -32,7 +32,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 
-
+//Add Identity service 
 builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddRoles<IdentityRole>() //Add Role From Identity
     .AddEntityFrameworkStores<ApplicationDbContext>()

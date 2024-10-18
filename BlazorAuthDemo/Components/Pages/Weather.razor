@@ -1,5 +1,9 @@
 ﻿@page "/weather"
+
+@using Microsoft.AspNetCore.Authorization
+
 @attribute [StreamRendering]
+@attribute [Authorize]
 
 <PageTitle>Weather</PageTitle>
 
@@ -39,6 +43,7 @@ else
 @code {
     private WeatherForecast[]? forecasts;
 
+    [Authorize]
     protected override async Task OnInitializedAsync()
     {
         // Simulate asynchronous loading to demonstrate streaming rendering
