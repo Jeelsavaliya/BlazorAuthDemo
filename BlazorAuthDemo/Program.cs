@@ -1,4 +1,4 @@
-using BlazorAuthDemo.Client.Pages;
+//using BlazorAuthDemo.Client.Pages;
 using BlazorAuthDemo.Components;
 using BlazorAuthDemo.Components.Account;
 using BlazorAuthDemo.Data;
@@ -17,7 +17,7 @@ builder.Services.AddRazorComponents()
 builder.Services.AddCascadingAuthenticationState();
 builder.Services.AddScoped<IdentityUserAccessor>();
 builder.Services.AddScoped<IdentityRedirectManager>();
-builder.Services.AddScoped<AuthenticationStateProvider, PersistingRevalidatingAuthenticationStateProvider>();
+//builder.Services.AddScoped<AuthenticationStateProvider, PersistingRevalidatingAuthenticationStateProvider>();
 
 builder.Services.AddAuthentication(options =>
     {
@@ -68,8 +68,8 @@ app.UseAntiforgery();
 
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()
-    .AddInteractiveWebAssemblyRenderMode()
-    .AddAdditionalAssemblies(typeof(BlazorAuthDemo.Client._Imports).Assembly);
+    .AddInteractiveWebAssemblyRenderMode();
+    //.AddAdditionalAssemblies(typeof(BlazorAuthDemo.Client._Imports).Assembly);
 
 // Add additional endpoints required by the Identity /Account Razor components.
 app.MapAdditionalIdentityEndpoints();
